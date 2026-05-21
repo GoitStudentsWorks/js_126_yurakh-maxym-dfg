@@ -1,14 +1,6 @@
-const BASE_URL = 'https://deserts-store.b.goit.study/api';
+import axios from 'axios';
 
-export async function request(endpoint, options = {}) {
-  const response = await fetch(
-    `${BASE_URL}${endpoint}`,
-    options
-  );
+export const api = axios.create({
+  baseURL: 'https://deserts-store.b.goit.study/api',
+});
 
-  if (!response.ok) {
-    throw new Error(`HTTP Error: ${response.status}`);
-  }
-
-  return response.json();
-}
