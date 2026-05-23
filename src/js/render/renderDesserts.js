@@ -1,4 +1,4 @@
-export function renderCategories(categories) {
+export function rf {
   const container = document.querySelector('.desserts_categories-container');
 
   const markup = categories.map(({ _id, name }) => `
