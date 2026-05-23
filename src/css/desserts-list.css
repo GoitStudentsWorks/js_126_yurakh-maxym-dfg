@@ -1,0 +1,13 @@
+.categories-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .categories-desktop {
+    display: none;
+  }
+
+  .categories-mobile {
+    display: block;
+  }
+}

@@ -1,7 +1,9 @@
 export function renderCategories(categories) {
   const container = document.querySelector(
-    '.desserts_categories-container'
-  );
+  '.categories-desktop'
+);
+
+ if (!container) return;
 
 const categoriesWithAll = [
   {
@@ -61,6 +63,32 @@ export function renderDesserts(desserts) {
       `
     )
     .join('');
+
+  container.innerHTML = markup;
+}
+
+export function renderCategoriesSelect(categories) {
+  const container = document.querySelector(
+    '.categories-mobile'
+  );
+
+ if (!container) return;
+
+  const markup = `
+    <select class="categories-select">
+      <option value="all">Всі десерти</option>
+
+      ${categories
+        .map(
+          ({ _id, name }) => `
+            <option value="${_id}">
+              ${name}
+            </option>
+          `
+        )
+        .join('')}
+    </select>
+  `;
 
   container.innerHTML = markup;
 }
