@@ -81,7 +81,6 @@
   border: 2px solid #000000;
   border-radius: 50%;
 
-  color: #000000;
 
   display: flex;
   align-items: center;
@@ -96,7 +95,7 @@
 }
 
 .swiper-button-prev:hover,
-.swiper-button-next:hover
+.swiper-button-next:hover,
 .swiper-button-prev:focus,
 .swiper-button-next:focus {
   opacity: 0.8;
