@@ -1,0 +1,32 @@
+.footer {
+    background-color: #9ff1ef;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 67px;
+}
+
+.footer-logo-icon {
+    min-width: 299px;
+    min-height: 64px;
+    display: block;
+}
+
+.footer-logo-icon use {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-nav {
+    margin-bottom: 32px;
+}
