@@ -1,0 +1,173 @@
+/* ===== CONTAINER ===== */
+
+.container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+    background-color: #f5fdfd;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 76px;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+
+    color: #080c0c;
+}
+
+.header-logo-icon {
+    display: block;
+    fill: currentColor;
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+
+.header-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+}
+
+.header-menu-icon {
+    display: block;
+    fill: currentColor;
+}
+
+/* ===== NAVIGATION ===== */
+
+.header-nav,
+.header-btn {
+    display: none;
+}
+
+/* =========================
+   MOBILE 375+
+========================= */
+
+@media screen and (min-width: 375px) {
+    .container {
+        max-width: 375px;
+    }
+}
+
+/* =========================
+   TABLET 768+
+========================= */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .header-container {
+        min-height: 84px;
+    }
+
+    .header-menu-btn {
+        display: none;
+    }
+
+    .header-nav {
+        display: block;
+        margin-left: auto;
+    }
+
+    .header-nav-list {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .header-nav-link {
+        display: block;
+
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 400;
+
+        color: #080c0c;
+
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link:focus {
+        color: #f19898;
+    }
+
+    .header-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 24px;
+        padding: 12px 24px;
+
+        border-radius: 100px;
+
+        font-family: 'Work Sans', sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 500;
+
+        color: #080c0c;
+        background-color: #f19898;
+
+        transition:
+            background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .header-btn:hover,
+    .header-btn:focus {
+        background-color: #ee8585;
+        transform: scale(1.03);
+    }
+}
+
+/* =========================
+   DESKTOP 1440+
+========================= */
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    .header-nav-list {
+        gap: 32px;
+    }
+
+    .header-btn {
+        margin-left: 32px;
+    }
+}
