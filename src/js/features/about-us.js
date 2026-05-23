@@ -10,7 +10,6 @@ let swiper = null;
 function initSwiper() {
   const isMobile = window.innerWidth < 768;
 
-  // MOBILE → destroy swiper
   if (isMobile) {
     if (swiper) {
       swiper.destroy(true, true);
@@ -30,13 +29,13 @@ function initSwiper() {
       spaceBetween: 24,
 
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-container .swiper-button-next',
+        prevEl: '.swiper-container .swiper-button-prev',
         disabledClass: 'swiper-button-disabled',
       },
 
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-container .swiper-pagination',
         clickable: true,
       },
 
