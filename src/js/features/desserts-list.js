@@ -11,10 +11,20 @@ import {
 import {getCategories} from '/js/services/api/categories.js';
 import { getDesserts } from '../services/api/desserts.js';
 
+let currentPage = 1;
+let currentCategory = 'all';
+
+const loadMoreBtn = document.querySelector(
+  '.desserts_load-more-btn'
+);
+
+
 async function loadDesserts(params = {}) {
   const data = await getDesserts(params);
 
   renderDesserts(data.desserts);
+
+  return data;
 }
 
 async function initDesserts() {
@@ -51,6 +61,11 @@ if (select) {
   container.addEventListener('change', handleCategoryChange);
 
 select.addEventListener('change', handleCategoryChange);
+
+loadMoreBtn.addEventListener(
+  'click',
+  handleLoadMore
+);
 }
 
 async function handleCategoryChange(event) {
@@ -70,6 +85,20 @@ if (categoryId === 'all') {
 
 }
 
+async function handleLoadMore() {
+  currentPage += 1;
+
+  const params = {
+    page: currentPage,
+    limit: 8,
+  };
+
+  if (currentCategory !== 'all') {
+    params.category = currentCategory;
+  }
+
+  await loadDesserts(params);
+}
 
 initDesserts();
 

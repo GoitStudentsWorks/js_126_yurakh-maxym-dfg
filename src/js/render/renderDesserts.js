@@ -64,7 +64,7 @@ export function renderDesserts(desserts) {
     )
     .join('');
 
-  container.innerHTML = markup;
+container.innerHTML = markup;
 }
 
 export function renderCategoriesSelect(categories) {
