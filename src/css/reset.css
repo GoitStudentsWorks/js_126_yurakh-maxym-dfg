@@ -13,6 +13,7 @@ body {
   font-family: 'Work Sans', sans-serif;
   color: #080c0c;
   background-color: #f5fdfd;
+  min-width: 320px;
 }
 
 h1,

@@ -1,7 +1,11 @@
-export function rf {
-  const container = document.querySelector('.desserts_categories-container');
+export function renderCategories(categories) {
+  const container = document.querySelector(
+    '.desserts_categories-container'
+  );
 
-  const markup = categories.map(({ _id, name }) => `
+  const markup = categories
+    .map(
+      ({ _id, name }) => `
     <label>
       <input
         type="radio"
@@ -10,7 +14,9 @@ export function rf {
       >
       ${name}
     </label>
-  `).join('');
+  `
+    )
+    .join('');
 
   container.innerHTML = markup;
 }
