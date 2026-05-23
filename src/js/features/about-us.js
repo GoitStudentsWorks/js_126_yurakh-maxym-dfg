@@ -5,32 +5,56 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const swiper = new Swiper('.mySwiper', {
-  modules: [Navigation, Pagination], 
+let swiper = null;
 
-  loop: true, 
+function initSwiper() {
+  const isMobile = window.innerWidth < 768;
 
-  slidesPerView: 1,
-  spaceBetween: 24,
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true, 
-  },
-
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 24,
-    },
-    1440: {
-      slidesPerView: 2,
-      spaceBetween: 24,
+  // MOBILE → destroy swiper
+  if (isMobile) {
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
     }
+
+    return;
   }
-});
+
+  if (!swiper) {
+    swiper = new Swiper('.mySwiper', {
+      modules: [Navigation, Pagination],
+
+      loop: false,
+
+      slidesPerView: 1,
+      spaceBetween: 24,
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        disabledClass: 'swiper-button-disabled',
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+
+        1440: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
+}
+
+initSwiper();
+
+window.addEventListener('resize', initSwiper);
