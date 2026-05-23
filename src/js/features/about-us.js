@@ -11,7 +11,7 @@ const swiper = new Swiper('.mySwiper', {
   loop: true, 
 
   slidesPerView: 1,
-  spaceBetween: 16,
+  spaceBetween: 24,
 
   navigation: {
     nextEl: '.swiper-button-next',
@@ -26,7 +26,7 @@ const swiper = new Swiper('.mySwiper', {
   breakpoints: {
     768: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: 24,
     },
     1440: {
       slidesPerView: 2,
