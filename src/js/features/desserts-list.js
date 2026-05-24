@@ -41,12 +41,6 @@ function updateLoadMoreButton(data) {
     data.totalItems / data.limit
   );
 
- console.log({
-    currentPage,
-    totalPages,
-    hidden: currentPage >= totalPages,
-  });
-
   loadMoreBtn.hidden =
     currentPage >= totalPages;
 }
@@ -79,9 +73,10 @@ async function initDesserts() {
 renderCategories(categories);
 renderCategoriesSelect(categories);
 
-await loadDesserts({
+const initialData = await loadDesserts({
   limit: 8,
 });
+updateLoadMoreButton(initialData);
 
 const select = document.querySelector(
   '.categories-select'
@@ -102,11 +97,6 @@ if (select) {
   );
 
   container.addEventListener('change', handleCategoryChange);
-
-  select.addEventListener(
-    'change',
-    handleCategoryChange
-  );
 
 loadMoreBtn.addEventListener(
   'click',
