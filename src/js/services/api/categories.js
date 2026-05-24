@@ -5,5 +5,3 @@ export async function getCategories() {
 
   return data;
 }
-
-const categories = await getCategories();
