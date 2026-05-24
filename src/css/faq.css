@@ -17,12 +17,6 @@
   stroke-width: 3.2;
 }
 
-@media screen and (max-width: 1439px) {
-  .faq-section.faq-section--opened .faq-title {
-    margin-bottom: 80px;
-  }
-}
-
 .faq-list {
   list-style: none;
   padding: 0;
