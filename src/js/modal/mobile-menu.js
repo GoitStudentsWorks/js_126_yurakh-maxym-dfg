@@ -1,18 +1,41 @@
 (() => {
   const refs = {
-      // Додати атрибут data-menu-open на кнопку відкриття
-      openModalBtn: document.querySelector('[data-menu-open]'),
-      // Додати атрибут data-menu-close на кнопку закриття
-      closeModalBtn: document.querySelector('[data-menu-close]'),
-      // Додати атрибут data-menu на div-контейнер модалки
-      modal: document.querySelector('[data-menu]'),
+    openMenuBtn: document.querySelector('[data-menu-open]'),
+    closeMenuBtn: document.querySelector('[data-menu-close]'),
+    menu: document.querySelector('[data-menu]'),
+    menuLinks: document.querySelectorAll('.mobile-menu-link, .mobile-menu-btn'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  if (!refs.openMenuBtn || !refs.closeMenuBtn || !refs.menu) {
+    return;
+  }
 
-  function toggleModal() {
-    // is-menu-open це клас який буде додаватися/забиратися на div-контейнері при натисканні на кнопки
-    refs.modal.classList.toggle('is-menu-open');
+  refs.openMenuBtn.addEventListener('click', openMenu);
+  refs.closeMenuBtn.addEventListener('click', closeMenu);
+
+  refs.menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  function openMenu() {
+    refs.menu.classList.add('is-menu-open');
+    document.body.classList.add('no-scroll');
+    refs.openMenuBtn.setAttribute('aria-expanded', 'true');
+
+    document.addEventListener('keydown', onEscPress);
+  }
+
+  function closeMenu() {
+    refs.menu.classList.remove('is-menu-open');
+    document.body.classList.remove('no-scroll');
+    refs.openMenuBtn.setAttribute('aria-expanded', 'false');
+
+    document.removeEventListener('keydown', onEscPress);
+  }
+
+  function onEscPress(event) {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
   }
 })();
