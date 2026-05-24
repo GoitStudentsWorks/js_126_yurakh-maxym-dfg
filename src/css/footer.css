@@ -37,7 +37,6 @@
 }
 
 .footer-nav-link {
-    font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 1.5;
@@ -88,12 +87,11 @@
 
 .footer-copyright {
     width: 100%;
-    font-family: "Work Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
     color: #080c0c;
-    border-top: 1px solid #080c0c;
+    border-top: 2px solid #080c0c;
     padding-top: 32px;
 }
 
@@ -121,7 +119,7 @@
     }
 
     .footer-container {
-        padding-top: 40px;
+        padding-top: 75px;
         padding-bottom: 40px;
         flex-direction: row;
         justify-content: space-between;
@@ -139,6 +137,10 @@
 
     .footer-nav {
         margin-bottom: 0;
+    }
+
+    .footer-nav-link {
+        font-size: 14px;
     }
 
     .footer-social-list {
