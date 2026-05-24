@@ -9,6 +9,7 @@ const content = document.querySelector(
 );
 const media = document.querySelector('.dessert-modal__media');
 
+let currentDessertId = null;
 
 function createModalImageMarkup(dessert) {
   return `
@@ -60,7 +61,9 @@ function initRating() {
 
 
 export function renderModal(dessert) {
-  if (!content) return;
+  if (!content  || !media) return;
+
+  currentDessertId = dessert._id ?? dessert.id;
 
   media.innerHTML =
     createModalImageMarkup(dessert);
@@ -111,5 +114,23 @@ if (modal) {
   modal.addEventListener(
     'click',
     handleBackdropClick
+  );
+}
+if (modal) {
+  modal.addEventListener('click', handleOrderOpenClick);
+}
+
+function handleOrderOpenClick(e) {
+  const btn = e.target.closest('[data-order-open]');
+  if (!btn) return;
+
+  if (!currentDessertId) return;
+
+  closeDessertDetailsModal();
+
+  window.dispatchEvent(
+    new CustomEvent('order:open', {
+      detail: { dessertId: currentDessertId },
+    })
   );
 }
