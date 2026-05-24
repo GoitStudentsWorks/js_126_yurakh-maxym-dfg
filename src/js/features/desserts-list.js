@@ -9,6 +9,11 @@ import {
 import {getCategories} from '/js/services/api/categories.js';
 import { getDesserts, getDessertById } from '../services/api/desserts.js';
 
+import {
+  showLoader,
+  hideLoader,
+} from '../utils/loader.js';
+
 let currentPage = 1;
 let currentCategory = 'all';
 
@@ -19,6 +24,7 @@ const loadMoreBtn = document.querySelector(
 
 async function loadDesserts(params = {},
   append = false) {
+    showLoader();
   const data = await getDesserts(params);
 
   renderDesserts(
@@ -26,6 +32,7 @@ async function loadDesserts(params = {},
     append
   );
 
+  hideLoader();
   return data;
 }
 
@@ -33,6 +40,12 @@ function updateLoadMoreButton(data) {
   const totalPages = Math.ceil(
     data.totalItems / data.limit
   );
+
+ console.log({
+    currentPage,
+    totalPages,
+    hidden: currentPage >= totalPages,
+  });
 
   loadMoreBtn.hidden =
     currentPage >= totalPages;
