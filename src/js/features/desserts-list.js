@@ -101,6 +101,27 @@ loadMoreBtn.addEventListener(
   'click',
   handleLoadMore
 );
+
+const dessertsList = document.querySelector(
+  '.desserts-list'
+);
+
+dessertsList.addEventListener(
+  'click',
+  handleDessertClick
+);
+}
+
+function handleDessertClick(event) {
+  const btn = event.target.closest(
+    '.dessert-details-btn'
+  );
+
+  if (!btn) return;
+
+  const dessertId = btn.dataset.id;
+
+  openDessertModal(dessertId);
 }
 
 async function handleCategoryChange(event) {

@@ -1,13 +1,69 @@
-.categories-mobile {
+
+/* MOBILE */
+
+.categories-desktop {
   display: none;
 }
 
-@media (max-width: 767px) {
-  .categories-desktop {
+.categories-mobile {
+  display: block;
+}
+
+.desserts_title {
+font-size: 48px;
+line-height: 120%;
+letter-spacing: -0.01em;
+text-align: center;
+color: #080C0C;
+margin-bottom: 24px;
+}
+
+.desserts_description {
+font-size: 18px;
+line-height: 150%;
+text-align: center;
+color: #080C0C;
+margin-bottom: 40px;
+}
+
+.desserts_categories-container {
+  margin-bottom: 40px;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1440px) {
+  input[name='category'] {
     display: none;
   }
 
+  input[name='category']:checked + .category-name {
+    background-color: #C07979;
+    border-color: #080C0C;
+  }
+
+  .category-name {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid #1e1e1e;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+
+  .categories-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 32px;
+    justify-content: center;
+  }
+
   .categories-mobile {
-    display: block;
+    display: none;
   }
 }
+

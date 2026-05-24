@@ -23,7 +23,9 @@ const categoriesWithAll = [
           value="${_id}"
           ${index === 0 ? 'checked' : ''}
         >
-        ${name}
+        <span class="category-name">
+          ${name}
+        </span>
       </label>
     `
     )
@@ -41,6 +43,7 @@ export function renderDesserts(desserts,
   const markup = desserts
     .map(
       ({
+        _id,
         image,
         category,
         name,
@@ -60,11 +63,21 @@ export function renderDesserts(desserts,
           <p>${description}</p>
 
           <p>${price} грн</p>
+          
+          <button
+    type="button"
+    class="dessert-details-btn"
+    data-id="${_id}"
+  >
+    <svg width="24" height="24">
+      <use href="/img/icons.svg#icon-arrow-outward"></use>
+    </svg>
+  </button>
         </li>
       `
     )
     .join('');
-    
+
 if (append) {
     container.insertAdjacentHTML(
       'beforeend',
