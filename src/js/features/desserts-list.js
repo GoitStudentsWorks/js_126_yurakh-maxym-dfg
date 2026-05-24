@@ -13,6 +13,11 @@ import {
   showLoader,
   hideLoader,
 } from '../utils/loader.js';
+import {
+  openDessertDetailsModal,
+  renderModal,
+} from '../modal/dessert-details-modal.js';
+
 
 let currentPage = 1;
 let currentCategory = 'all';
@@ -41,11 +46,6 @@ function updateLoadMoreButton(data) {
     data.totalItems / data.limit
   );
 
- console.log({
-    currentPage,
-    totalPages,
-    hidden: currentPage >= totalPages,
-  });
 
   loadMoreBtn.hidden =
     currentPage >= totalPages;
@@ -160,7 +160,10 @@ if (categoryId === 'all') {
 
 
 export async function openDessertModal(id) {
-    const dessert = await getDessertById(id);
+  const dessert = await getDessertById(id);
+
+  renderModal(dessert);
+  openDessertDetailsModal();
 }
 
 initDesserts();
