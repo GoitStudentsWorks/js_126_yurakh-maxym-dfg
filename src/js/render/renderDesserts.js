@@ -32,7 +32,8 @@ const categoriesWithAll = [
   container.innerHTML = markup;
 }
 
-export function renderDesserts(desserts) {
+export function renderDesserts(desserts,
+  append = false) {
   const container = document.querySelector(
     '.desserts-list'
   );
@@ -63,8 +64,15 @@ export function renderDesserts(desserts) {
       `
     )
     .join('');
-
-container.innerHTML = markup;
+    
+if (append) {
+    container.insertAdjacentHTML(
+      'beforeend',
+      markup
+    );
+  } else {
+    container.innerHTML = markup;
+  }
 }
 
 export function renderCategoriesSelect(categories) {

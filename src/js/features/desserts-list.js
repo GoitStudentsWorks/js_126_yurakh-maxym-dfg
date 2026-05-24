@@ -19,13 +19,48 @@ const loadMoreBtn = document.querySelector(
 );
 
 
-async function loadDesserts(params = {}) {
+async function loadDesserts(params = {},
+  append = false) {
   const data = await getDesserts(params);
 
-  renderDesserts(data.desserts);
+  renderDesserts(
+    data.desserts,
+    append
+  );
 
   return data;
 }
+
+function updateLoadMoreButton(data) {
+  const totalPages = Math.ceil(
+    data.totalItems / data.limit
+  );
+
+  loadMoreBtn.hidden =
+    currentPage >= totalPages;
+}
+
+async function handleLoadMore() {
+  currentPage += 1;
+
+  const params = {
+    page: currentPage,
+    limit: 8,
+  };
+
+  if (currentCategory !== 'all') {
+    params.category = currentCategory;
+  }
+
+const data = await loadDesserts(
+  params,
+  true
+);
+
+updateLoadMoreButton(data);
+}
+
+
 
 async function initDesserts() {
   const categories = await getCategories();
@@ -70,34 +105,24 @@ loadMoreBtn.addEventListener(
 
 async function handleCategoryChange(event) {
   const categoryId = event.target.value;
-
+currentCategory = categoryId;
+currentPage = 1;
 
 if (categoryId === 'all') {
-  await loadDesserts({
+  const data = await loadDesserts({
     limit: 8,
   });
+  updateLoadMoreButton(data);
 } else {
-  await loadDesserts({
+  const data = await loadDesserts({
   category: categoryId,
   limit: 8,
 });
+  updateLoadMoreButton(data);
 }
 
 }
 
-async function handleLoadMore() {
-  currentPage += 1;
 
-  const params = {
-    page: currentPage,
-    limit: 8,
-  };
-
-  if (currentCategory !== 'all') {
-    params.category = currentCategory;
-  }
-
-  await loadDesserts(params);
-}
 
 initDesserts();
