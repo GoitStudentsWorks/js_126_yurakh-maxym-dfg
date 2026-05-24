@@ -81,10 +81,10 @@
 }
 .swiper .feedback-slider .swiper-pagination {
   position: static;
-  margin: 0 !important;
+  margin: 0;
   display: flex;
   flex-direction: row;
-  justify-content: start !important;
+  justify-content: start;
   align-items: center;
   transform: none;
 }
