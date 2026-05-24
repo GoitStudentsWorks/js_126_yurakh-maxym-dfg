@@ -52,27 +52,31 @@ export function renderDesserts(desserts,
       }) => `
         <li class="dessert-card">
           <img
+          class="dessert-card__image"
             src="${image}"
             alt="${name}"
           >
 
-          <p>${category.name}</p>
+          <p class="dessert-card__category">${category.name}</p>
 
-          <h3>${name}</h3>
+          <h3 class="dessert-card__title">${name}</h3>
 
-          <p>${description}</p>
+          <p class="dessert-card__description">${description}</p>
 
-          <p>${price} грн</p>
-          
-          <button
-    type="button"
-    class="dessert-details-btn"
-    data-id="${_id}"
-  >
-    <svg width="24" height="24">
-      <use href="/img/icons.svg#icon-arrow-outward"></use>
-    </svg>
-  </button>
+          <div class="dessert-card__block">
+            <p class="dessert-card__price">${price} грн</p>
+            
+            <button
+      type="button"
+      class="dessert-details-btn"
+      data-id="${_id}"
+      data-modal-open
+    >
+      <svg class="dessert-details-btn__icon" width="24" height="24">
+        <use href="/img/icons.svg#icon-arrow-outward"></use>
+      </svg>
+    </button>
+          </div>
         </li>
       `
     )

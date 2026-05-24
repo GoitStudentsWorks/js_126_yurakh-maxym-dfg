@@ -1,3 +1,5 @@
+import { openDessertModal } from '/js/features/desserts-list.js';
+
 (() => {
   const refs = {
       // Додати атрибут data-modal-open на кнопку відкриття

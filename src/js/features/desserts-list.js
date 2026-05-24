@@ -1,15 +1,13 @@
 import Choices from 'choices.js';
 import 'choices.js/public/assets/styles/choices.min.css';
 
-// import Raty from 'raty-js';
-
 import {
   renderCategories,
   renderCategoriesSelect,
   renderDesserts,
 } from '../render/renderDesserts.js';
 import {getCategories} from '/js/services/api/categories.js';
-import { getDesserts } from '../services/api/desserts.js';
+import { getDesserts, getDessertById } from '../services/api/desserts.js';
 
 let currentPage = 1;
 let currentCategory = 'all';
@@ -83,10 +81,7 @@ if (select) {
     shouldSort: false,
   });
 
-  select.addEventListener(
-    'change',
-    handleCategoryChange
-  );
+  
 }
 
    const container = document.querySelector(
@@ -95,7 +90,10 @@ if (select) {
 
   container.addEventListener('change', handleCategoryChange);
 
-select.addEventListener('change', handleCategoryChange);
+  select.addEventListener(
+    'change',
+    handleCategoryChange
+  );
 
 loadMoreBtn.addEventListener(
   'click',
@@ -124,6 +122,8 @@ function handleDessertClick(event) {
   openDessertModal(dessertId);
 }
 
+
+
 async function handleCategoryChange(event) {
   const categoryId = event.target.value;
 currentCategory = categoryId;
@@ -145,5 +145,9 @@ if (categoryId === 'all') {
 }
 
 
+
+export async function openDessertModal(id) {
+    const dessert = await getDessertById(id);
+}
 
 initDesserts();
