@@ -58,8 +58,8 @@
   cursor: pointer;
 }
 
-.faq-section .ac .ac-trigger::after {
-  display: none !important;
+.faq-section .accordion-container .faq-item.ac .ac-header .ac-trigger::after {
+  display: none;
 }
 
 .faq-section
