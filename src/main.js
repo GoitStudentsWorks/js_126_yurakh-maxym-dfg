@@ -5,4 +5,4 @@ import './js/features/feedbacks.js';
 
 import './js/modal/mobile-menu.js';
 import './js/modal/dessert-details-modal.js';
-import './js/modal/mobile-menu.js';
+import './js/modal/order-modal.js';
