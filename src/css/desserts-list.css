@@ -194,7 +194,7 @@ transition: background-color 250ms ease, border-color 250ms ease, transform 150m
 }
 
 .desserts_load-more-btn {
-  border: 1px solid #F19898;
+  border: 2px solid #F19898;
 border-radius: 100px;
 padding: 10px 24px;
 width: 335px;
@@ -205,13 +205,13 @@ font-weight: 500;
 line-height: 150%;
 
 margin-top: 40px;
-transition: background-color 250ms ease, border-color 250ms ease, transform 150ms ease;
+transition: border-color 250ms ease, transform 150ms ease;
 }
 
 .desserts_load-more-btn:hover,
 .desserts_load-more-btn:focus-visible {
-  border-color: #c07979;
-  background-color: #c07979;
+  border-color: #080c0c;
+  
 }
 
 .desserts_load-more-btn:active {
@@ -319,12 +319,11 @@ margin-bottom: 24px;
     border: 2px solid #1e1e1e;
     border-radius: 100px;
     cursor: pointer;
-    transition: background-color 250ms ease, border-color 250ms ease, transform 150ms ease;
+    transition: background-color 250ms ease, transform 150ms ease;
   }
 
   .category-name:hover {
     background-color: #f19898;
-    border-color: #c07979;
   }
 
   input[name='category']:active + .category-name,
@@ -347,6 +346,10 @@ margin-bottom: 24px;
   max-width: 310px;
 height: 431px;
 min-width: 310px;
+}
+
+.desserts_load-more-btn {
+  width: 198px;
 }
 
 }
