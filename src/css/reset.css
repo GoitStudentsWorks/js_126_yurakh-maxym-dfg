@@ -55,7 +55,6 @@ img {
 .section {
   padding-top: 64px;
   padding-bottom: 64px;
-  max-width: 1440px;
 }
 
 @media screen and (min-width: 1440px) {
