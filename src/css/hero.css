@@ -3,8 +3,8 @@
 }
 
 .hero-section {
-  padding-top: 75.5px;
-  padding-bottom: 75.5px;
+  padding-top: 155.5px;
+  padding-bottom: 155.5px;
   width: 100%;
 
   background-image:
@@ -93,8 +93,8 @@
   }
 
   .hero-section {
-    padding-top: 245px;
-    padding-bottom: 245px;
+    padding-top: 325px;
+    padding-bottom: 325px;
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
       url('../img/hero/hero-tab-1x.jpg');
@@ -120,8 +120,8 @@
 
 @media screen and (min-width: 1440px) {
   .hero-section {
-    padding-top: 226px;
-    padding-bottom: 226px;
+    padding-top: 306px;
+    padding-bottom: 306px;
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
       url('../img/hero/hero-desk-1x.jpg');
@@ -139,7 +139,7 @@
   .hero-content {
     max-width: 730px;
   }
-  2 .hero-title {
+  .hero-title {
     font-size: 56px;
   }
 }
