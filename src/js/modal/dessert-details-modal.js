@@ -1,34 +1,32 @@
+import Raty from 'raty-js';
+import 'raty-js/src/raty.css';
+
 const modal = document.querySelector('[data-modal]');
 const closeModalBtn = document.querySelector('[data-modal-close]');
 
 const content = document.querySelector(
   '.dessert_modal_content'
 );
+const media = document.querySelector('.dessert-modal__media');
 
 
-function createModalContentMarkup(dessert) {
+function createModalImageMarkup(dessert) {
   return `
-    <img
-      class="modal-image"
-      src="${dessert.image}"
-      alt="${dessert.name}"
-    >
+    <img class="modal-image" src="${dessert.image}" alt="${dessert.name}">
+  `;
+}
 
-    <h2 class="modal-title">
-      ${dessert.name}
-    </h2>
+function createModalInfoMarkup(dessert) {
+  return `
+    <h2 class="modal-title">${dessert.name}</h2>
 
-    <p class="modal-price">
-      ${dessert.price} грн
-    </p>
+    <p class="modal-price">${dessert.price} грн</p>
 
     <div class="modal-rating">
-      ${dessert.rate}
+      <div class="rating-stars" data-rating="${dessert.rate}"></div>
     </div>
 
-    <p class="modal-description">
-      ${dessert.description}
-    </p>
+    <p class="modal-description">${dessert.description}</p>
 
     <p class="modal-composition">
       <span class="modal-composition-label">Склад</span>: ${dessert.composition}
@@ -36,12 +34,40 @@ function createModalContentMarkup(dessert) {
   `;
 }
 
+function roundToHalf(value) {
+  return Math.round(value * 2) / 2;
+}
+
+function initRating() {
+  if (!content) return;
+
+  const starsEl = content.querySelector('.rating-stars');
+  if (!starsEl) return;
+
+  const raw = Number(starsEl.dataset.rating) || 0;
+  const score = roundToHalf(raw); // якщо хочеш 4.3 -> 4.5
+
+  const raty = new Raty(starsEl, {
+    score,
+    readOnly: true,
+    halfShow: true,
+    starType: "i",       
+    number: 5,
+  });
+
+  raty.init();
+}
+
 
 export function renderModal(dessert) {
   if (!content) return;
 
+  media.innerHTML =
+    createModalImageMarkup(dessert);
   content.innerHTML =
-    createModalContentMarkup(dessert);
+    createModalInfoMarkup(dessert);
+  
+  initRating();
 }
 
 export function openDessertDetailsModal() {
