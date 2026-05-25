@@ -1,4 +1,4 @@
-<div class="backdrop is-hidden" id="order-backdrop" data-order>
+<div class="order-backdrop is-hidden" id="order-backdrop" data-order>
   <div class="modal order-modal">
     <button
       type="button"
@@ -10,9 +10,7 @@
         <use href="./img/icons.svg#icon-close"></use>
       </svg>
     </button>
-
     <h2 class="modal-title">Оформлення замовлення</h2>
-
     <form class="order-form" id="order-form" autocomplete="off">
       <div class="form-field">
         <label for="user-name" class="form-label">Ім’я*</label>
@@ -25,19 +23,18 @@
           required
         />
       </div>
-
       <div class="form-field">
         <label for="user-tel" class="form-label">Телефон*</label>
         <input
           type="tel"
-          name="phone"
+          name="tel"
           id="user-tel"
           class="form-input"
           placeholder="38 0__ ________"
+          pattern="^380\d{9}$"
           required
         />
       </div>
-
       <div class="form-field">
         <label for="user-comment" class="form-label">Коментар*</label>
         <textarea
@@ -48,7 +45,6 @@
           required
         ></textarea>
       </div>
-
       <button type="submit" class="form-submit-btn">Надіслати заявку</button>
     </form>
   </div>

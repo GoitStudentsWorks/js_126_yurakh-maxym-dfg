@@ -1,4 +1,5 @@
 import { createOrder } from '../services/api/orders.js';
+import Swal from 'sweetalert2';
 
 const refs = {
   closeModalBtn: document.querySelector('[data-order-close]'),
@@ -6,53 +7,71 @@ const refs = {
   form: document.querySelector('.order-form'),
 };
 
-window.addEventListener('order:open', event => {
-  const { dessertId } = event.detail;
+if (refs.closeModalBtn && refs.modal && refs.form) {
+  window.addEventListener('order:open', event => {
+    const { dessertId } = event.detail;
+    refs.modal.classList.remove('is-hidden');
+    document.body.classList.add('modal-open');
+    refs.modal.dataset.dessertId = dessertId;
+    document.addEventListener('keydown', onEscPress);
+  });
 
-  refs.modal.classList.remove('is-hidden');
-  refs.modal.dataset.dessertId = dessertId;
+  refs.closeModalBtn.addEventListener('click', closeModal);
 
-  document.addEventListener('keydown', onEscPress);
-});
+  refs.modal.addEventListener('click', event => {
+    if (event.target === refs.modal) {
+      closeModal();
+    }
+  });
 
-refs.closeModalBtn.addEventListener('click', closeModal);
-
-refs.modal.addEventListener('click', event => {
-  if (event.target === refs.modal) {
-    closeModal();
+  function closeModal() {
+    refs.modal.classList.add('is-hidden');
+    document.body.classList.remove('modal-open');
+    document.removeEventListener('keydown', onEscPress);
   }
-});
 
-function closeModal() {
-  refs.modal.classList.add('is-hidden');
-  document.removeEventListener('keydown', onEscPress);
+  function onEscPress(event) {
+    if (event.code === 'Escape') {
+      closeModal();
+    }
+  }
+
+  refs.form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+
+    const inputPhone = formData.get('phone') || formData.get('tel') || '';
+    const cleanPhone = inputPhone.replace(/\D/g, '');
+
+    const orderData = {
+      dessertId: refs.modal.dataset.dessertId,
+      name: formData.get('name'),
+      phone: cleanPhone,
+      comment: formData.get('comment'),
+    };
+
+    try {
+      await createOrder(orderData);
+
+      Swal.fire({
+        title: 'Успішно!',
+        text: 'Ваше замовлення успішно виконане!',
+        icon: 'success',
+        confirmButtonColor: '#f19898',
+      });
+
+      refs.form.reset();
+      closeModal();
+    } catch (error) {
+      console.error(error);
+
+      Swal.fire({
+        title: 'Помилка замовлення',
+        text: 'Щось пішло не так при відправці замовлення. Перевірте, чи правильно вписані дані.',
+        icon: 'error',
+        confirmButtonColor: '#080c0c',
+      });
+    }
+  });
 }
-
-function onEscPress(event) {
-  if (event.code === 'Escape') {
-    closeModal();
-  }
-}
-
-refs.form.addEventListener('submit', async event => {
-  event.preventDefault();
-
-  const formData = new FormData(event.currentTarget);
-
-  const orderData = {
-    dessertId: refs.modal.dataset.dessertId,
-    name: formData.get('name'),
-    phone: formData.get('phone'),
-    comment: formData.get('comment'),
-  };
-
-  try {
-    await createOrder(orderData);
-    alert('Замовлення успішно оформлено!');
-    refs.form.reset();
-    closeModal();
-  } catch (error) {
-    console.error(error);
-    alert('Щось пішло не так при відправці замовлення.');
-  }
-});
