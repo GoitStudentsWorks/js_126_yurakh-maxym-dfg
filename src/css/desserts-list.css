@@ -181,11 +181,12 @@ transition: background-color 250ms ease, border-color 250ms ease, transform 150m
 .dessert-details-btn:hover,
 .dessert-details-btn:focus-visible {
   background-color: #f19898;
-  border-color: #c07979;
+  border-color: #080c0c;
 }
 
 .dessert-details-btn:active {
   transform: scale(0.94);
+  background-color: #f5b6b6;
 }
 
 .dessert-details-btn__icon {
@@ -205,17 +206,18 @@ font-weight: 500;
 line-height: 150%;
 
 margin-top: 40px;
-transition: border-color 250ms ease, transform 150ms ease;
+transition: border-color 250ms ease, transform 150ms ease, background-color 250ms ease;
 }
 
 .desserts_load-more-btn:hover,
 .desserts_load-more-btn:focus-visible {
   border-color: #080c0c;
-  
+  background-color: #f5fdfd;
 }
 
 .desserts_load-more-btn:active {
   transform: scale(0.97);
+  background-color: #f5b6b6;;
 }
 
 /* TABLET */
@@ -329,6 +331,7 @@ margin-bottom: 24px;
   input[name='category']:active + .category-name,
   .category-name:active {
     transform: scale(0.96);
+    background-color: #f5b6b6;
   }
 
   .categories-desktop {
