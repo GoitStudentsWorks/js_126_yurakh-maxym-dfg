@@ -34,7 +34,7 @@ const categoriesWithAll = [
   container.innerHTML = markup;
 }
 
-const ICON_SPRITE = `${import.meta.env.BASE_URL}img/icons.svg`;
+const ICONS = new URL('../../img/icons.svg', import.meta.url).href;
 
 export function renderDesserts(desserts,
   append = false) {
@@ -75,7 +75,7 @@ export function renderDesserts(desserts,
       data-modal-open
     >
       <svg class="dessert-details-btn__icon" width="24" height="24">
-        <use href="${ICON_SPRITE}#icon-arrow-outward"></use>
+        <use href="${ICONS}#icon-arrow-outward"></use>
       </svg>
     </button>
           </div>
