@@ -64,7 +64,8 @@ function initSwiper() {
     pagination: {
       el: swiperPagin,
       clickable: true,
-      dynamicBullets: false,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
     },
     keyboard: {
       enabled: true,
