@@ -3,7 +3,10 @@
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+}
+.popular-products .dessert-card__image {
+    margin-bottom: 16px;
 }
 
 .popular-products-slider {
@@ -34,7 +37,7 @@
 
 .popular-products-nav {
     display: flex;
-    gap: 8px;
+    gap: 16px;
 }
 
 
@@ -57,6 +60,7 @@
     background: #f5f5f5;
     cursor: not-allowed;
 }
+
 .popular-products .swiper-pagination-bullet {
     width: 8px;
     height: 8px;
@@ -68,6 +72,7 @@
 .popular-products .swiper-pagination-bullet-active {
     background: #000;
 }
+
 .popular-products .popular-products-prev,
 .popular-products .popular-products-next {
     position: static;
@@ -79,9 +84,6 @@
 }
 
 
-
 @media (min-width: 768px) {
-    .popular-products-title {
-        font-size: 48px;
-    }
+    
 }
