@@ -59,7 +59,7 @@ function initSwiper() {
     modules: [Navigation, Pagination, Keyboard],
     slidesPerView: 1,
     spaceBetween: 20,
-    loop: true,
+    loop: false,
 
     pagination: {
       el: swiperPagin,
