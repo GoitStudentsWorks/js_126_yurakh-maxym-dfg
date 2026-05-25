@@ -54,6 +54,7 @@
 
   border: none;
   background-color: transparent;
+
 }
 
 .modal-close-btn svg {
@@ -61,7 +62,12 @@
   
 stroke-width: 1px;
 stroke: #080C0C;
+transition: stroke 250ms ease;
 
+}
+.modal-close-btn:hover svg,
+.modal-close-btn:focus-visible svg {
+  stroke: #f19898;
 }
 
 
@@ -136,11 +142,12 @@ line-height: 150%;
 .modal-order-btn:hover,
 .modal-order-btn:focus-visible {
   border-color: #080c0c;
+  background-color: #f5fdfd;
 }
 
 .modal-order-btn:active {
   transform: scale(0.97);
-  background-color: #c07979;
+  background-color: #f5b6b6;
 }
 
 
