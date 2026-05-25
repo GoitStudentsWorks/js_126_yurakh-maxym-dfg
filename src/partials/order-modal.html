@@ -1,0 +1,51 @@
+<div class="order-backdrop is-hidden" id="order-backdrop" data-order>
+  <div class="modal order-modal">
+    <button
+      type="button"
+      class="modal-close-btn"
+      data-order-close
+      aria-label="Закрити модальне вікно"
+    >
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="./img/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="modal-title">Оформлення замовлення</h2>
+    <form class="order-form" id="order-form" autocomplete="off">
+      <div class="form-field">
+        <label for="user-name" class="form-label">Ім’я*</label>
+        <input
+          type="text"
+          name="name"
+          id="user-name"
+          class="form-input"
+          placeholder="Вікторія"
+          required
+        />
+      </div>
+      <div class="form-field">
+        <label for="user-tel" class="form-label">Телефон*</label>
+        <input
+          type="tel"
+          name="tel"
+          id="user-tel"
+          class="form-input"
+          placeholder="38 0__ ________"
+          pattern="^380\d{9}$"
+          required
+        />
+      </div>
+      <div class="form-field">
+        <label for="user-comment" class="form-label">Коментар*</label>
+        <textarea
+          name="comment"
+          id="user-comment"
+          class="form-textarea"
+          placeholder="Ваш коментар"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="form-submit-btn">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
