@@ -81,9 +81,30 @@
     right: auto;
     margin: 0;
     transform: none;
+
+    transition: background-color 250ms ease, transform 150ms ease;
 }
 
+.popular-products .popular-products-prev:hover,
+.popular-products .popular-products-prev:focus,
+.popular-products .popular-products-next:hover,
+.popular-products .popular-products-next:focus {
+    background: #f19898;
+}
 
-@media (min-width: 768px) {
-    
+.popular-products .popular-products-prev:active,
+.popular-products .popular-products-next:active {
+    background: #c07979;
+    transform: scale(0.94);
+}
+
+.popular-products .dessert-card--popular .dessert-card__image {
+    border-radius: 8px;
+}
+
+@media (min-width: 1440px) {
+    .popular-products .dessert-card--popular {
+        max-width: 421px;
+        min-height: 499px;
+    }
 }
