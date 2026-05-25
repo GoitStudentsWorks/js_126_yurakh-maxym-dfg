@@ -37,6 +37,7 @@ function initSwiper() {
       pagination: {
         el: '.swiper-container .swiper-pagination',
         clickable: true,
+        dynamicBullets: true,
       },
 
       breakpoints: {

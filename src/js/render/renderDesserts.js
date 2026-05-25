@@ -34,6 +34,8 @@ const categoriesWithAll = [
   container.innerHTML = markup;
 }
 
+const ICONS = new URL('../../img/icons.svg', import.meta.url).href;
+
 export function renderDesserts(desserts,
   append = false) {
   const container = document.querySelector(
@@ -73,7 +75,7 @@ export function renderDesserts(desserts,
       data-modal-open
     >
       <svg class="dessert-details-btn__icon" width="24" height="24">
-        <use href="/img/icons.svg#icon-arrow-outward"></use>
+        <use href="${ICONS}#icon-arrow-outward"></use>
       </svg>
     </button>
           </div>
