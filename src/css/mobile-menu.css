@@ -12,6 +12,11 @@
     visibility: hidden;
     pointer-events: none;
 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+
     transition:
         opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
         visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,7 +31,7 @@
 .mobile-menu-container {
     width: 100%;
     height: 100%;
-  
+    width: 335px;
 }
 
 .mobile-menu-header {
