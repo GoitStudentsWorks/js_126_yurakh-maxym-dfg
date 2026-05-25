@@ -11,7 +11,7 @@
 
 .popular-products-slider {
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .popular-products-controls {
@@ -100,6 +100,10 @@
 
 .popular-products .dessert-card--popular .dessert-card__image {
     border-radius: 8px;
+}
+.popular-products {
+    --swiper-theme-color: #000;
+    --swiper-pagination-color: #000;
 }
 
 @media (min-width: 1440px) {

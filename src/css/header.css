@@ -107,6 +107,7 @@
 
     transition:
       background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
       border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -119,6 +120,7 @@
   .header-btn:active {
     border-color: #080c0c;
     background-color: #f5b6b6;
+    transform: scale(0.97);
   }
 }
 
