@@ -20,7 +20,7 @@ function initSwiper() {
   }
 
   if (!swiper) {
-    swiper = new Swiper('.mySwiper', {
+    swiper = new Swiper('.about-us .mySwiper', {
       modules: [Navigation, Pagination],
 
       loop: false,

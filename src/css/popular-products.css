@@ -106,6 +106,13 @@
     --swiper-pagination-color: #000;
 }
 
+@media (max-width: 767px) {
+    .popular-products .dessert-card--popular {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
 @media (min-width: 1440px) {
     .popular-products .dessert-card--popular {
         max-width: 421px;

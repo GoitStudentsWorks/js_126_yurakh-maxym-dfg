@@ -108,9 +108,10 @@ box-sizing: border-box;
   border: 1px solid #080C0C;
 border-radius: 16px;
 padding: 16px;
+width: 100%;
 max-width: 335px;
 height: 433px;
-min-width: 312px;
+min-width: 0;
 }
 
 
@@ -198,7 +199,8 @@ transition: background-color 250ms ease, border-color 250ms ease, transform 150m
   border: 2px solid #F19898;
 border-radius: 100px;
 padding: 10px 24px;
-width: 335px;
+width: 100%;
+max-width: 335px;
 height: 44px;
 background: #F19898;
 
