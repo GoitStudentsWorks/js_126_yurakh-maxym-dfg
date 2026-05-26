@@ -249,3 +249,8 @@
  --swiper-navigation-sides-offset: -24px;
  --swiper-navigation-top-offset: 50%;
 }
+
+.about-us {
+  --swiper-theme-color: #000;
+  --swiper-pagination-color: #000;
+}
