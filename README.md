@@ -38,7 +38,7 @@
 
 - **Тімлід:** Yurakh Maksym
 - **Скраммастер:** Antonii Viazovskyi
-- **Розробники:** Daniel, Darina Savarina, Dima Dychka, Julia Zakrepa, Oleg
+- **Розробники:** Daniel, Daryna Savarina, Dima Dychka, Julia Zakrepa, Oleg
   Kotelevsky, Oleksandr Makhno
 
 ---
@@ -89,5 +89,5 @@ The project works with a backend via a REST API.
 
 - **Team Lead:** Yurakh Maksym
 - **Scrum Master:** Antonii Viazovskyi
-- **Developers:** Daniel, Darina Savarina, Dima Dychka, Julia Zakrepa, Oleg
+- **Developers:** Daniel, Daryna Savarina, Dima Dychka, Julia Zakrepa, Oleg
   Kotelevsky, Oleksandr Makhno
