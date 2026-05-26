@@ -105,6 +105,10 @@
     --swiper-theme-color: #000;
     --swiper-pagination-color: #000;
 }
+.popular-products-prev svg,
+.popular-products-next svg {
+    stroke: #080c0c;
+}
 
 @media (max-width: 767px) {
     .popular-products .dessert-card--popular {
