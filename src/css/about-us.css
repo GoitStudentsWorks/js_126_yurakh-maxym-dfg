@@ -243,11 +243,28 @@
  bottom: -56px;
 }
 
+.about-us .slider-container .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  bottom: -56px;
+  width: auto;
+  padding-top: 0;
+  transform: translateX(-50%);
+}
+
 .about-us .slider-container {
  overflow: visible;
  --swiper-navigation-size: 48px;
  --swiper-navigation-sides-offset: -24px;
  --swiper-navigation-top-offset: 50%;
+}
+
+.about-us .slider-container .swiper-button-prev,
+.about-us .slider-container .swiper-button-next {
+  top: 50%;
+  margin-top: 0;
+  transform: translateY(-50%);
 }
 
 .about-us {
