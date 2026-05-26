@@ -15,14 +15,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 335px;
+    width: 100%;
+    max-width: 335px;
     height: 132px;
     margin-bottom: 32px;
 }
 
 .footer-logo-icon {
     display: block;
-    width: 299px;
+    width: 100%;
+    max-width: 299px;
     height: 64px;
 }
 

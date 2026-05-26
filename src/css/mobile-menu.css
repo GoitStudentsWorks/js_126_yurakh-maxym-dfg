@@ -31,7 +31,7 @@
 .mobile-menu-container {
     width: 100%;
     height: 100%;
-    width: 335px;
+    max-width: 335px;
 }
 
 .mobile-menu-header {
