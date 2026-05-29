@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/choco-bytes/",
+    "build": "vite build --base=/js_126_yurakh-maxym-dfg/",
     "preview": "vite preview"
   },
   "devDependencies": {
