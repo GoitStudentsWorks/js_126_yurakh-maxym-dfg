@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js_126_yurakh-maxym-dfg/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Солодка майстерня</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Comfortaa:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="module" crossorigin src="/js_126_yurakh-maxym-dfg/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_126_yurakh-maxym-dfg/assets/vendor-Bzxr1f4C.js">
+    <link rel="stylesheet" crossorigin href="/js_126_yurakh-maxym-dfg/assets/vendor-GQEdVj7P.css">
+    <link rel="stylesheet" crossorigin href="/js_126_yurakh-maxym-dfg/assets/index-DGRqkwZU.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header-container">
+    <a class="header-logo" href="#" aria-label="Солодка майстерня">
+      <svg class="header-logo-icon" width="158" height="72">
+        <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-logo"></use>
+      </svg>
+    </a>
+
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li><a class="header-nav-link" href="#desserts-list">Солодощі</a></li>
+        <li><a class="header-nav-link" href="#about-us">Про нас</a></li>
+        <li><a class="header-nav-link" href="#feedback">Відгуки</a></li>
+        <li><a class="header-nav-link" href="#faq">Часті питання</a></li>
+      </ul>
+    </nav>
+
+    <a class="header-btn" href="#desserts-list">До покупок</a>
+
+    <button
+      class="header-menu-btn"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-open
+    >
+      <svg class="header-menu-icon" width="24" height="24">
+        <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+
+    <main>
+      <section class="section hero-section">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Ласкаво просимо до Солодкої Майстерні</h1>
+            <p class="hero-text">
+                Відкрийте для себе наші<br class="mobile-br">
+                неперевершені десерти, приготовані<br class="mobile-br">
+                з любов'ю та увагою до деталей.<br class="mobile-br">
+                Кожен шматочок — це справжнє<br class="mobile-br">
+                свято смаку!
+            </p>
+            <div class="hero-btn-wrapper">
+                <a href="#feedback" class="hero-btn" id="hero-cta-link">Що про нас думають</a>
+            </div>
+        </div>
+    </div>
+</section>
+      <section class="section popular-products" id="popular-products">
+  <div class="container popular-products-container">
+    <h2 class="popular-products-title">Наші бестселлери</h2>
+
+    <div class="popular-products-slider swiper">
+      <div class="swiper-wrapper popular-products-wrapper"></div>
+
+      <div class="popular-products-controls">
+        <div class="swiper-pagination popular-products-pagination"></div>
+
+        <div class="popular-products-nav">
+          <button
+            class="swiper-button-prev popular-products-prev"
+            type="button"
+            aria-label="Попередній слайд"
+          >
+            <svg width="24" height="24">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-arrow-left"></use>
+            </svg>
+          </button>
+
+          <button
+            class="swiper-button-next popular-products-next"
+            type="button"
+            aria-label="Наступний слайд"
+          >
+            <svg width="24" height="24">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-arrow-right1"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="section desserts_list_section" id="desserts-list">
+  <div class="container desserts_list_container">
+    <div class="desserts-head">
+      <div class="desserts-head-txt">
+        <h2 class="desserts_title">Солодощі</h2>
+        <p class="desserts_description">
+          Спробуйте наші смачні десерти, які вас здивують!
+        </p>
+      </div>
+
+      <div class="desserts_categories-container">
+        <div class="categories-desktop"></div>
+
+        <div class="categories-mobile"></div>
+      </div>
+    </div>
+
+    <ul class="desserts-list"></ul>
+    <div class="loader is-hidden"></div>
+
+    <div class="load_more_btn">
+      <button class="desserts_load-more-btn" type="button">
+        Завантажити ще
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="section about-us" id="about-us">
+  <div class="container">
+
+    <div class="about-us-header">
+      <h2>Про нас</h2>
+      <p class="text-about">
+        У нашій 'Солодкій Майстерні' ми створюємо неповторні солодкі шедеври, 
+        що приносять радість та задоволення.
+        Наша місія — пропонувати високоякісні десерти,
+        які поєднують у собі вишуканий смак, свіжі інгредієнти та естетичний вигляд.
+      </p>
+    </div>
+
+    <div class="slider-container swiper-container">
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-desk-one-1x-BKEz_sMT.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-desk-one-2x-DzC9Xj1O.jpg 2x" />
+              <source media="(min-width: 768px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-tab-one-1x-DrI8I3Qy.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-tab-one-2x-CbmMZLOJ.jpg 2x" />
+              <img src="/js_126_yurakh-maxym-dfg/assets/about-us-mob-one-1x-CY6O0Qw9.jpg" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-mob-one-2x-Ds_23GDP.jpg 2x" alt="Про нашу майстерню - процес приготування крему" loading="lazy" />
+            </picture>
+          </div>
+
+                    <div class="swiper-slide">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-desk-two-1x-CTM4zEVr.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-desk-two-2x-C1HPzyih.jpg 2x" />
+              <source media="(min-width: 768px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-tab-two-1x-DqNOJVLg.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-tab-two-2x-ByEWur_2.jpg 2x" />
+              <img src="/js_126_yurakh-maxym-dfg/assets/about-us-mob-two-1x-CYeBPo9G.jpg" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-mob-two-2x-D9G4ag0Q.jpg 2x" alt="Про нашу майстерню - кондитери за роботою" loading="lazy" />
+            </picture>
+          </div>
+          
+
+
+          <div class="swiper-slide">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-desk-three-1x-D-YF7leg.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-desk-three-2x-DRLM8Biy.jpg 2x" />
+              <source media="(min-width: 768px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-tab-three-1x-W6CJm3HH.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-tab-three-2x-BZU7J-xi.jpg 2x" />
+              <img src="/js_126_yurakh-maxym-dfg/assets/about-us-mob-three-1x-BqB5lyZY.jpg" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-mob-three-2x-CBuAdzCt.jpg 2x" alt="Про нашу майстерню - вітрина з десертами" loading="lazy" />
+            </picture>
+          </div>
+
+                    <div class="swiper-slide">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-desk-four-1x-D8GoSnwh.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-desk-four-2x-CIcKtfiL.jpg 2x" />
+              <source media="(min-width: 768px)" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-tab-four-1x-CQrjVw6v.jpg 1x, /js_126_yurakh-maxym-dfg/assets/about-us-tab-four-2x-BaYEIGau.jpg 2x" />
+              <img src="/js_126_yurakh-maxym-dfg/assets/about-us-mob-four-1x-BPc7GNdE.jpg" srcset="/js_126_yurakh-maxym-dfg/assets/about-us-mob-four-2x-LZU-qlWS.jpg 2x" alt="Про нашу майстерню - дівчина з десертом" loading="lazy" />
+            </picture>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="swiper-button-prev" aria-label="Попередній слайд">
+        <svg>
+          <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-arrow-left"></use>
+        </svg>
+      </button>
+
+      <button class="swiper-button-next" aria-label="Наступний слайд">
+        <svg>
+          <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-arrow-right1"></use>
+        </svg>
+      </button>
+      
+      <div class="swiper-pagination"></div>
+
+    </div>
+  </div>
+</section>
+      <section class="section"  id="feedback">
+  <div class="container">
+    <h2 class="feedback-subtitle">Відгуки клієнтів</h2>
+    <p class="feedback-text">Найкращі десерти, які я коли-небудь куштував!</p>
+
+    <div class="slider-section-wrapper">
+      <div class="swiper mySwiper feedback-slider">
+        <ul class="feedback-list swiper-wrapper"></ul>
+        <div class="btn-bullet-container">
+          <div class="swiper-pagination"></div>
+          <div class="btn-container">
+            <div class="swiper-button-prev">
+              <svg class="arrow-left-icon" width="24" height="24">
+                <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-arrow-left"></use>
+              </svg>
+            </div>
+            <div class="swiper-button-next">
+              <svg class="arrow-right-icon" width="24" height="24">
+                <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-arrow-right1"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="faq-section" id="faq">
+  <div class="container">
+    <h2 class="faq-title">Часті питання</h2>
+
+    <ul class="faq-list accordion-container">
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">1. Які способи оплати ви приймаєте?</span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Ми приймаємо оплату онлайн банківськими картками Visa та Mastercard,
+            через платіжні системи Apple Pay та Google Pay, а також готівкою
+            кур'єру при отриманні замовлення.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">2. Чи є у вас доставка?</span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Так, ми здійснюємо доставку по всьому місту. Вартість та умови
+            доставки залежать від вашого району, деталі можна уточнити при
+            оформленні замовлення.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">3. Як швидко здійснюється доставка?</span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Зазвичай доставка займає від 60 до 90 хвилин з моменту підтвердження
+            замовлення. У пікові години час доставки може бути збільшений, про
+            що ми вас обов'язково повідомимо.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              4. Чи можна забрати замовлення самостійно?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Так, ви можете забрати своє замовлення самостійно за адресою
+            [Вказати адресу самовивозу] у робочі години магазину.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              5. Чи пропонуєте ви десерти для людей з особливими дієтичними
+              потребами (безглютенові, безлактозні, веганські)?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Ми постійно розширюємо наш асортимент. Наразі у нас є обмежений
+            вибір безглютенових та безлактозних десертів. Будь ласка,
+            перегляньте наш каталог або зв'яжіться з нами для отримання
+            детальної інформації.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              6. Як я можу зробити замовлення на індивідуальний торт?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Для замовлення індивідуального торта, будь ласка, зв'яжіться з нашим
+            менеджером за телефоном [Вказати номер телефону] або залиште заявку
+            на сайті. Ми обговоримо всі деталі дизайну, начинки та терміни
+            виконання.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              7. Чи можна змінити або скасувати замовлення після його
+              оформлення?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Якщо вам потрібно змінити або скасувати замовлення, будь ласка,
+            негайно зв'яжіться з нами за телефоном. Можливість внесення змін
+            залежить від етапу, на якому знаходиться ваше замовлення.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              8. Який термін зберігання ваших десертів?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Термін зберігання десертів залежить від їхнього типу та
+            інгредієнтів. Зазвичай десерти рекомендується вживати протягом 24-72
+            годин. Точна інформація про термін зберігання вказана на упаковці
+            кожного виробу.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              9. Чи є у вас програма лояльності або знижки для постійних
+              клієнтів?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Так, ми цінуємо наших постійних клієнтів! Деталі нашої програми
+            лояльності та діючих акцій ви можете знайти на окремій сторінці
+            нашого сайту або уточнити у менеджера.
+          </p>
+        </div>
+      </li>
+
+      <li class="faq-item ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            <span class="ac-title">
+              10. Що робити, якщо у мене є скарга або пропозиція?
+            </span>
+
+            <svg class="faq-icon" width="17" height="10" aria-hidden="true">
+              <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </button>
+        </h3>
+
+        <div class="ac-panel">
+          <p class="ac-text">
+            Ми завжди раді зворотному зв'язку! Якщо у вас виникли питання,
+            скарги або пропозиції, будь ласка, напишіть нам на електронну пошту
+            [Вказати email] або зателефонуйте. Ваша думка допомагає нам ставати
+            кращими.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="container footer-container">
+    <a href="#" class="footer-logo">
+      <svg class="footer-logo-icon" width="299" height="64">
+        <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-icon-logo-large"></use>
+      </svg>
+    </a>
+
+    <nav class="footer-nav">
+      <ul class="footer-nav-list">
+        <li class="footer-nav-item">
+          <a href="#desserts-list" class="footer-nav-link">Солодощі</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#about-us" class="footer-nav-link">Про нас</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#feedback" class="footer-nav-link">Відгуки</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="#faq" class="footer-nav-link">Часті питання</a>
+        </li>
+      </ul>
+    </nav>
+
+    <ul class="footer-social-list">
+      <li class="footer-social-item">
+        <a
+          href="https://www.facebook.com/"
+          class="footer-social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="footer-social-icon" width="32" height="32">
+            <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-item">
+        <a
+          href="https://www.instagram.com/"
+          class="footer-social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="footer-social-icon" width="32" height="32">
+            <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-social-item">
+        <a
+          href="https://www.youtube.com/"
+          class="footer-social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="footer-social-icon" width="32" height="32">
+            <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <p class="footer-copyright">
+      &copy; <span id="current-year"></span> Солодка Майстерня. Усі права
+      захищені.
+    </p>
+  </div>
+</footer>
+
+
+    <div class="mobile-menu" id="mobile-menu" data-menu>
+  <div class="mobile-menu-container">
+    <div class="mobile-menu-header">
+      <a
+        class="mobile-menu-logo"
+        href="./index.html"
+        aria-label="Солодка майстерня"
+      >
+        <svg class="mobile-menu-logo-icon" width="158" height="72">
+          <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-logo"></use>
+        </svg>
+      </a>
+
+      <button
+        class="mobile-menu-close-btn"
+        type="button"
+        aria-label="Close mobile menu"
+        data-menu-close
+      >
+        <svg class="mobile-menu-close-icon" width="24" height="24">
+          <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mobile-menu-nav">
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="#desserts-list">Солодощі</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="#about-us">Про нас</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="#feedback">Відгуки</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="#faq">Часті питання</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="mobile-menu-btn" href="#desserts-list">До покупок</a>
+  </div>
+</div>
+
+    <div class="backdrop" data-modal>
+  <div class="dessert-modal">
+    <button type="button" class="modal-close-btn" data-modal-close>
+      <svg width="24" height="24">
+        <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="dessert-modal__body">
+      <div class="dessert-modal__media"></div>
+
+      <div class="dessert-modal__info">
+        <div class="dessert_modal_content"></div>
+        <button type="button" class="modal-order-btn" data-order-open>
+          Перейти до замовлення
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="order-backdrop is-hidden" id="order-backdrop" data-order>
+  <div class="modal order-modal">
+    <button
+      type="button"
+      class="modal-close-btn"
+      data-order-close
+      aria-label="Закрити модальне вікно"
+    >
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/js_126_yurakh-maxym-dfg/assets/icons-qp2qQD9b.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="modal-title">Оформлення замовлення</h2>
+    <form class="order-form" id="order-form" autocomplete="off">
+      <div class="form-field">
+        <label for="user-name" class="form-label">Ім’я*</label>
+        <input
+          type="text"
+          name="name"
+          id="user-name"
+          class="form-input"
+          placeholder="Вікторія"
+          required
+        />
+      </div>
+      <div class="form-field">
+        <label for="user-tel" class="form-label">Телефон*</label>
+        <input
+          type="tel"
+          name="tel"
+          id="user-tel"
+          class="form-input"
+          placeholder="38 0__ ________"
+          pattern="^380\d{9}$"
+          required
+        />
+      </div>
+      <div class="form-field">
+        <label for="user-comment" class="form-label">Коментар*</label>
+        <textarea
+          name="comment"
+          id="user-comment"
+          class="form-textarea"
+          placeholder="Ваш коментар"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="form-submit-btn">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
+
+
+  </body>
+</html>
